@@ -23,7 +23,7 @@ public class ReciprocalCycles {
 				}else if(m == 1) {
 					break;
 				} else {
-					BigInteger t = new BigInteger("9");
+					BigInteger t = NINE;
 					BigInteger mBig = new BigInteger(Integer.toString(m));
 					while(t.mod(mBig) != BigInteger.ZERO) {
 						t = t.multiply(BigInteger.TEN);

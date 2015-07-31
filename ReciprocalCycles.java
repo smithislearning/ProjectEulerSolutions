@@ -1,49 +1,44 @@
-import java.util.ArrayList;
+import java.math.BigInteger;
 
 
 public class ReciprocalCycles {
+	
+	private static final BigInteger NINE = new BigInteger("9");
 
 	public static void main(String[] args){
-		long n = 1L;
-		long d = 1L;
-		long t = 9L;
-		long a = 2L;
-		long b = 5L;
+		int d = 1;
 		int length = 0;
+		int maxD = 0;
 		
-		for( d = 2L; d < 1001L; d++) {
+		for( d = 1; d < 1001; d++) {
 			int tmpLength = 0;
-			long m = d;
+			int m = d;
 			while(true) {
-				if(m % 2L == 0L) {
-					m /= 2L;
+				if(m % 2 == 0) {
+					m /= 2;
 					continue;
-				}else if(m % 5L == 0L) {
-					m /= 5L;
+				}else if(m % 5 == 0) {
+					m /= 5;
 					continue;
-				}else if(m == 1L) {
+				}else if(m == 1) {
 					break;
-				} else if(t % m != 0L) {
-					System.out.println("in it d = " + d);
-					System.out.println("in it m = " + m);
-					t = t * 10L + 9L;
-					System.out.println("t = " + t);
-					continue;
 				} else {
-					n = t / d;
-					System.out.println("d = " + d);
-					System.out.println("m = " + m);
-					System.out.println("recurring cycle length = " + Long.toString(n).length());
-					tmpLength = Long.toString(n).length();
-					n = 1L;
-					t = 9L;
+					BigInteger t = new BigInteger("9");
+					BigInteger mBig = new BigInteger(Integer.toString(m));
+					while(t.mod(mBig) != BigInteger.ZERO) {
+						t = t.multiply(BigInteger.TEN);
+						t = t.add(NINE);
+					}
+					tmpLength = t.toString().length();
 					break;
 				}
 			}
-			if(tmpLength >= length) {
-				length = tmpLength;
+
+			if(tmpLength > length) {
+				maxD = d;
+				length = tmpLength;				
 			}
 		}
-		System.out.println(length);
+		System.out.println("maxD = " +maxD);
 	}
 }

@@ -1,21 +1,13 @@
-Question Number: P_024
-Working File/Directory: LexicographicPermutations.java
+f(x) = x^2 + x + 41;
 
-Notes:
-
-012, 021, 102, 120, 201, 210
-
-0123, 0132, 0213, 0231, 0312, 0321, 1023, 1032, 1203, 1230, 
+f(x - 40) = (x - 40)^2 + (x - 40) + 41;
+	= 
+	n = 40;
+	n^2 - n + 41 = 1601
 
 
-2783915460
-3
-7
-7
-3
-6
-2
-3
-2
-2
+f(x) = x^2 + ax + b;
 
+f(x - n) = (x - n)^2 + a(x - n) + b;
+	= x^2 -2n * x + n^2 + a * x - a * n + b;
+	= x^2 + (a - 2n) x + n^2 - an + b;

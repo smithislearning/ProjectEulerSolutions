@@ -10,4 +10,4 @@ f(x) = x^2 + ax + b;
 
 f(x - n) = (x - n)^2 + a(x - n) + b;
 	= x^2 -2n * x + n^2 + a * x - a * n + b;
-	= x^2 + (a - 2n) x + n^2 - an + b;w
+	= x^2 + (a - 2n) x + n^2 - an + b;
